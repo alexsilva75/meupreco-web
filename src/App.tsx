@@ -4,6 +4,7 @@ import Form from "react-bootstrap/Form";
 import ProductList from "./components/ProductList";
 import Product from "./models/Product";
 import PrecoDaHora from "precodahora-api";
+import options from "./options";
 // import logo from "./logo.svg";
 //import "./App.css";
 
@@ -18,7 +19,7 @@ function App() {
 
     console.log(productInput.current!.value);
 
-    const response = await fetch("http://localhost:8000/api/products/", {
+    const response = await fetch(`${options.baseURL}/products/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
