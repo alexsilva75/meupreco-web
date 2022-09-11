@@ -19,7 +19,7 @@ function App() {
 
     console.log(productInput.current!.value);
 
-    const response = await fetch(`${options.baseURL}/products/`, {
+    const response = await fetch(`${options.baseURL}/produtos/`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -36,7 +36,7 @@ function App() {
     //   console.log("Erro: ", res.data);
     // }
     setProducts(
-      responseData.result.resultado.map((item: any) => {
+      responseData.result.map((item: any) => {
         const prod = { name: item.descricao, gtin: item.gtin };
         return prod;
       })
